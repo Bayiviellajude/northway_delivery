@@ -1,9 +1,6 @@
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:get/state_manager.dart';
-import 'package:northway_delivery/controllers/productcontroler.dart';
 
 //  flutter run --no-sound-null-safety
 class MyHomePage extends StatefulWidget {
@@ -12,8 +9,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final ProductController productController = (ProductController());
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,6 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 200,
             width: double.infinity,
             child: ListView(
+              
               children: [
                 SizedBox(
                     height: 200,
@@ -128,26 +124,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   fontWeight: FontWeight.bold),
             ),
           ),
-          SizedBox(
-            height: 10,
-          ),
-          Expanded(
-            child: Obx(()
-                          => StaggeredGridView.countBuilder(
-                  crossAxisCount: 2,
-                  itemCount: productController.productList.length,
-                  mainAxisSpacing: 16,
-                  crossAxisSpacing: 16,
-                  itemBuilder: (context, index) {
-                    return Container(
-                      height: 200,
-                      width: 100,
-                      color: Colors.yellow[800],
-                    );
-                  },
-                  staggeredTileBuilder: (index) => StaggeredTile.fit(1)),
-            ),
-          )
         ],
       ),
       drawer: Drawer(
