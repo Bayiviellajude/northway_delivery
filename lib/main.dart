@@ -1,4 +1,4 @@
-000000000000000000000000000000000000000000000000000000000.import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:northway_delivery/pages/cart.dart';
 import 'package:northway_delivery/pages/category.dart';
 import 'package:northway_delivery/pages/home_page.dart';
