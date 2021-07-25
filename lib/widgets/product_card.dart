@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:northway_delivery/services/product_services.dart';
+import 'package:northway_delivery/widgets/cart_info.dart';
+import 'package:northway_delivery/widgets/product_info.dart';
 
 class ProductCard extends StatefulWidget {
-  const ProductCard({ Key? key }) : super(key: key);
-
-    
+  const ProductCard({Key? key}) : super(key: key);
 
   @override
   _ProductCardState createState() => _ProductCardState();
@@ -13,43 +13,87 @@ class ProductCard extends StatefulWidget {
 class _ProductCardState extends State<ProductCard> {
   late Future<Product> futureProduct;
 
-   @override
+  @override
   void initState() {
     super.initState();
     futureProduct = fetchProduct();
   }
 
-//   FutureBuilder<Product>(
-//   future: futureProduct,
-//   builder: (context, snapshot) {
-//     if (snapshot.hasData) {
-//       return Text(snapshot.data!.name);
-//     } else if (snapshot.hasError) {
-//       return Text("${snapshot.error}");
-//     }
-
-//     // By default, show a loading spinner.
-//     return CircularProgressIndicator();
-//   },
-// )
-
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => ProductInfoPage()),
+        );
+      },
       child: Card(
-        child: Container(
-          Padding: EdgeInsects.all(10.0),
-          color: Colors.amber,
-          height: 100,
+        elevation: 5,
+        shadowColor: Colors.white,
+        color: Colors.white,
+
+        child: Padding(
+          padding: const EdgeInsets.all(1),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("FRIED FICE",style: TextStyle(fontSize: 25),),
-              Text("-SPICY",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),)
+              Image.asset(
+                "assets/images/pd1.jpg",
+                height: 70,
+                width: 150,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(
+                height: 7,
+              ), //SizedBox
+
+              Text(
+                "FRIED RICE",
+                style: TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.indigo[900],
+                ), //Textstyle
+              ), //Text
+              Text(
+                "PRICE GHC 20.00",
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.indigo[900],
+                ), //Textstyle
+              ), //Text
+
+              Text(
+                "SPICY",
+                style: TextStyle(
+                  fontSize: 10,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.indigo[900],
+                ), //Textstyle
+              ), // //SizedBox
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => CartInfoPage()),
+                      );
+                    },
+                    icon: Icon(Icons.shopping_cart, color: Colors.yellow[800]),
+                  )
+
+                ],
+              )
             ],
           ),
-        ),
-        
+        ), //Column
+
+        //SizedBox
       ),
     );
   }

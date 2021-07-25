@@ -1,5 +1,8 @@
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:flutter/material.dart';
+import 'package:northway_delivery/pages/media.dart';
+import 'package:northway_delivery/widgets/category_card.dart';
+
 
 class MyCategory extends StatefulWidget {
   @override
@@ -11,10 +14,15 @@ class _MyCategoryState extends State<MyCategory> {
   Widget build(BuildContext context) {
     return Scaffold(
        floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        elevation: 10,
-        backgroundColor: Colors.white,
-        child: Icon(Icons.call, color: Colors.yellow[900]),
+        onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Media()),
+              );
+        },
+        elevation: 0,
+        backgroundColor: Colors.yellow[800],
+        child: Icon(Icons.perm_device_information, color: Colors.indigo[900]),
       ),
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -51,15 +59,23 @@ class _MyCategoryState extends State<MyCategory> {
             Container(
               height: 200,
               width: 380,
-              child: Card(
-                semanticContainer: true,
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                child: Image.asset("assets/images/c1.png",
-                    height: 50, width: 50, fit: BoxFit.cover),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)),
-                elevation: 10,
-                margin: EdgeInsets.all(10),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CategoryCard()),
+                  );
+                },
+                child: Card(
+                  semanticContainer: true,
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  child: Image.asset("assets/images/c1.png",
+                      height: 50, width: 50, fit: BoxFit.cover),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)),
+                  elevation: 10,
+                  margin: EdgeInsets.all(10),
+                ),
               ),
             ),
             Container(

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "356189688289",
+    "project_id": "northway-clound",
+    "storage_bucket": "northway-clound.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356189688289:android:d1678c00a76d231c86c2a0",
+        "android_client_info": {
+          "package_name": "com.Northway.northway_delivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "356189688289-83kd2fao9dnh4f1gr7bmsqgaos3mhv9r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Northway.northway_delivery",
+            "certificate_hash": "0f0bac86a15bd7b5234ff98ae98e68eab3a0ae2e"
+          }
+        },
+        {
+          "client_id": "356189688289-b27am1cdearepvset299g7uq60vt0lg4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCbKl7P_R1ARG0BF3ewdzec37_7ziuzjY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "356189688289-b27am1cdearepvset299g7uq60vt0lg4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -98,7 +98,7 @@ class CartInfoPage extends StatelessWidget {
                             width: 5,
                           ),
                           Text(
-                            '\$200',
+                            '\$180',
                             style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w300,
@@ -168,6 +168,18 @@ class CartInfoPage extends StatelessWidget {
           ),
         ),
         ListTile(
+          leading: Icon(Icons.delivery_dining_rounded, color: Colors.yellow[800]),
+          trailing: Text("GHC 2",style: TextStyle(
+              color: Colors.indigo[900],
+            ),),
+          title: Text(
+            "Delivery Fee",
+            style: TextStyle(
+              color: Colors.indigo[900],
+            ),
+          ),
+        ),
+        ListTile(
           leading: Icon(Icons.payment, color: Colors.yellow[800]),
           title: Text(
             "USE A VOUCHER CODE",
@@ -214,7 +226,7 @@ class CartInfoPage extends StatelessWidget {
                   ),
                   Spacer(),
                   Text(
-                    "\$ 200",
+                    "\$ 220",
                     style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,

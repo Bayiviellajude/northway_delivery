@@ -1,6 +1,7 @@
 // ignore: import_of_legacy_library_into_null_safe
 
 import 'package:flutter/material.dart';
+import 'package:northway_delivery/pages/media.dart';
 
 class MySearchPage extends StatefulWidget {
   @override
@@ -11,11 +12,16 @@ class _MySearchPageState extends State<MySearchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        elevation: 10,
-        backgroundColor: Colors.white,
-        child: Icon(Icons.call, color: Colors.yellow[900]),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Media()),
+              );
+        },
+        elevation: 0,
+        backgroundColor: Colors.yellow[800],
+        child: Icon(Icons.perm_device_information, color: Colors.indigo[900]),
       ),
       appBar: AppBar(
         backgroundColor: Colors.white,

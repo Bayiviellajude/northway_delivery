@@ -1,11 +1,12 @@
 import 'dart:async';
 import 'dart:convert';
 
+
 import 'package:http/http.dart' as http;
 
-Future<Product> fetchProduct() async {
+Future <Product> fetchProduct() async {
   final response =
-      await http.get(Uri.parse('http://localhost:3000/product'));
+      await http.get(Uri.parse('http://192.168.1.1:3000/product'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -36,11 +37,11 @@ final String descr;
 
   factory Product.fromJson(Map<String, dynamic> json) {
     return Product(
-      name: json['product_name'],
-      id: json['id'],
-      category: json['categories'],
-      price: json['product_price'],
-      descr: json['product_description']
+      name: json['product_name'] as String,
+      id: json['id'] as int,
+      category: json['categories'] as String,
+      price: json['product_price'] as int,
+      descr: json['product_description']  as String
     );
   }
 }

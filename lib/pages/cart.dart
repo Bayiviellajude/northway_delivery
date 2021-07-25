@@ -1,6 +1,7 @@
 // ignore: import_of_legacy_library_into_null_safe
 
 import 'package:flutter/material.dart';
+import 'package:northway_delivery/pages/media.dart';
 import 'package:northway_delivery/widgets/cart_info.dart';
 
 class MyCartPage extends StatefulWidget {
@@ -13,10 +14,15 @@ class _MyCartPageState extends State<MyCartPage> {
   Widget build(BuildContext context) {
     return Scaffold(
        floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        elevation: 10,
-        backgroundColor: Colors.white,
-        child: Icon(Icons.call, color: Colors.yellow[900]),
+        onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Media()),
+              );
+        },
+        elevation: 0,
+        backgroundColor: Colors.yellow[800],
+        child: Icon(Icons.perm_device_information, color: Colors.indigo[900]),
       ),
       appBar: AppBar(
         backgroundColor: Colors.white,

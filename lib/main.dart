@@ -1,22 +1,26 @@
-import 'package:flutter/material.dart';
+000000000000000000000000000000000000000000000000000000000.import 'package:flutter/material.dart';
 import 'package:northway_delivery/pages/cart.dart';
 import 'package:northway_delivery/pages/category.dart';
 import 'package:northway_delivery/pages/home_page.dart';
+
 import 'package:northway_delivery/pages/notifications.dart';
 import 'package:northway_delivery/pages/search.dart';
+import 'package:northway_delivery/pages/start_page.dart';
+
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+ 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Northwway Delivery',
-      home: MyBottomNavigattionBar(),
+      title: 'Northway Delivery',
+      home: MyStart(),
     );
   }
 }
@@ -41,6 +45,7 @@ class _MyBottomNavigattionBarState extends State<MyBottomNavigattionBar> {
       _currentIndex = index;
     });
   }
+
 
   @override
   Widget build(BuildContext context) {

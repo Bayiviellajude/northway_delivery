@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.northway_delivery">
    <application
-        android:label="northway_delivery"
+        android:label="Northway Delivery"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
